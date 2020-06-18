@@ -4,28 +4,30 @@
 
 </head>
 <body>
+   <?php
+    echo "<body style=background-color:$_POST[BGkleur]>";
+   ?>
     <table>
+       
         <tr>
-            <th>Voornaam</th>
-            <th>Leeftijd</th>
-            <th>Woonplaats</th>
-            <th>Sport</th>
-            <th>Opleiding</th>
+            <?php
+                $gegevens= array("voornaam"=> "donne", "leeftijd"=> 17, "woonplaats"=>"De Kwakel", "Sport"=>"Voetbal", "Opleiding"=> "Applicatie ontwikkelaar");
+                foreach ($gegevens as $key => $value){
+                   echo "<th style=\"color:$_POST[tekstKleur];padding:$_POST[padding];border:$_POST[border];\">$key</th>";
+                }
+               
+            ?>
         </tr>
         <tr>
             <?php
                 $gegevens= array("voornaam"=> "donne", "leeftijd"=> 17, "woonplaats"=>"De Kwakel", "Sport"=>"Voetbal", "Opleiding"=> "Applicatie ontwikkelaar");
                 foreach ($gegevens as $key => $value){
-                    echo "<td>"$value["voornaam"]"</td>".
-                    "<td>"$value["leeftijd"]"</td>".
-                    "<td>"$value["woonplaats"]"</td>".
-                    "<td>"$value["Sport"]"</td>".
-                    "<td>"$value["Opleiding"]"</td>";
+                   echo "<td style=\"color:$_POST[tekstKleur];padding:$_POST[padding];border:$_POST[border];\">$value</td>";
                 }
+                
             ?>
         </tr>
     </table>
-
 
 </body>
 
